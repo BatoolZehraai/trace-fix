@@ -11,7 +11,7 @@ Debugging cryptic error logs and long stack traces wastes valuable development t
 
 - ** Copilot-Style Light Bulb QuickFix:** Press `Ctrl + .` on any error line to fix that line directly, or click **"⚡ Fix All Errors in This File"** to resolve all syntax, typing, casing, and logic issues across the entire file at once.
 - ** Terminal Right-Click Solve:** Highlight any stack trace or error log in the VS Code terminal, right-click, and select **"Fix with TraceFix"** or **"Fix All Errors in File"** to immediately repair the source code without annoying prompts.
-- **🔍 Dedicated Visual Diagnostic Panel:** Right-click and choose **"Explain & Fix Trace"** to open a clean side panel featuring:
+- **Dedicated Visual Diagnostic Panel:** Right-click and choose **"Explain & Fix Trace"** to open a clean side panel featuring:
   1. **What Happened (Simple Words):** A clear, ELI5 explanation of the root cause without confusing technical jargon.
   2. **Trace Path:** A visual step-by-step path (`File A -> File B -> Crash Point`) charting the execution flow leading up to the failure.
   3. **The Fix:** Actionable guidance with a direct **"Apply Fix"** button and copyable code snippet.
