@@ -1,0 +1,156 @@
+{
+  "name": "trace-fix",
+  "displayName": "TraceFix",
+  "description": "Targeted 1-click AI diagnostic tool for developers: explains stack traces in simple words, visualizes execution flow, and generates instant copy-paste code fixes.",
+  "version": "1.0.0",
+  "publisher": "tracefix",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tracefix/trace-fix"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Debuggers",
+    "Other"
+  ],
+  "keywords": [
+    "stack trace",
+    "error log",
+    "debugger",
+    "ai fix",
+    "gemini",
+    "diagnostic"
+  ],
+  "activationEvents": [
+    "onLanguage",
+    "onCommand:trace-fix.fixAllErrorsInFile",
+    "onCommand:trace-fix.directFixTerminalTrace",
+    "onCommand:trace-fix.applyQuickFixFromLightBulb",
+    "onCommand:trace-fix.explainTerminalTrace",
+    "onCommand:trace-fix.explainTrace"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "trace-fix.fixAllErrorsInFile",
+        "title": "Fix All Errors in File (TraceFix)",
+        "category": "TraceFix",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "trace-fix.applyQuickFixFromLightBulb",
+        "title": "Fix with TraceFix",
+        "category": "TraceFix",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "trace-fix.directFixTerminalTrace",
+        "title": "Fix with TraceFix",
+        "category": "TraceFix",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "trace-fix.explainTerminalTrace",
+        "title": "Explain & Fix Error (TraceFix)",
+        "category": "TraceFix",
+        "icon": "$(debug-console)"
+      },
+      {
+        "command": "trace-fix.explainTrace",
+        "title": "Explain & Fix Trace (TraceFix)",
+        "category": "TraceFix",
+        "icon": "$(debug-console)"
+      }
+    ],
+    "menus": {
+      "terminal/context": [
+        {
+          "command": "trace-fix.directFixTerminalTrace",
+          "group": "navigation@1"
+        },
+        {
+          "command": "trace-fix.fixAllErrorsInFile",
+          "group": "navigation@2"
+        },
+        {
+          "command": "trace-fix.explainTerminalTrace",
+          "group": "navigation@3"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "trace-fix.directFixTerminalTrace",
+          "group": "navigation@1"
+        },
+        {
+          "command": "trace-fix.fixAllErrorsInFile",
+          "group": "navigation@2"
+        },
+        {
+          "command": "trace-fix.explainTrace",
+          "group": "navigation@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "trace-fix.directFixTerminalTrace"
+        },
+        {
+          "command": "trace-fix.fixAllErrorsInFile"
+        },
+        {
+          "command": "trace-fix.explainTerminalTrace"
+        },
+        {
+          "command": "trace-fix.explainTrace"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "TraceFix",
+      "properties": {
+        "traceFix.apiKey": {
+          "type": "string",
+          "default": "",
+          "password": true,
+          "description": "Google Gemini API Key for TraceFix diagnostics.",
+          "scope": "application"
+        },
+        "traceFix.model": {
+          "type": "string",
+          "default": "gemini-3.5-flash-lite",
+          "description": "Primary Gemini model to use for trace analysis (with auto-fallback to available models).",
+          "enum": [
+            "gemini-3.5-flash-lite",
+            "gemini-3.5-flash",
+            "gemini-3.7-flash",
+            "gemini-3.8-flash",
+            "gemini-3.6-flash"
+          ],
+          "scope": "application"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --no-git-tag-version"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "typescript": "^5.4.5"
+  }
+}

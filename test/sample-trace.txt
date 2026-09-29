@@ -1,0 +1,17 @@
+Sample 1 (JavaScript / TypeScript):
+----------------------------------
+TypeError: Cannot read properties of undefined (reading 'map')
+    at UserList (src/components/UserList.tsx:24:18)
+    at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+    at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
+    at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
+    at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
+
+Sample 2 (Python):
+------------------
+Traceback (most recent call last):
+  File "app/services/order_service.py", line 42, in process_checkout
+    discount = self.calculate_discount(order.user, order.total)
+  File "app/services/order_service.py", line 87, in calculate_discount
+    return total * user.membership.discount_rate
+AttributeError: 'NoneType' object has no attribute 'discount_rate'
