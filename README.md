@@ -9,14 +9,14 @@
 
 Debugging cryptic error logs and long stack traces wastes valuable development time. **TraceFix** brings instant, jargon-free resolution right inside VS Code:
 
-- **💡 Copilot-Style Light Bulb QuickFix:** Press `Ctrl + .` on any error line to fix that line directly, or click **"⚡ Fix All Errors in This File"** to resolve all syntax, typing, casing, and logic issues across the entire file at once.
-- **⚡ Terminal Right-Click Solve:** Highlight any stack trace or error log in the VS Code terminal, right-click, and select **"Fix with TraceFix"** or **"Fix All Errors in File"** to immediately repair the source code without annoying prompts.
+- ** Copilot-Style Light Bulb QuickFix:** Press `Ctrl + .` on any error line to fix that line directly, or click **"⚡ Fix All Errors in This File"** to resolve all syntax, typing, casing, and logic issues across the entire file at once.
+- ** Terminal Right-Click Solve:** Highlight any stack trace or error log in the VS Code terminal, right-click, and select **"Fix with TraceFix"** or **"Fix All Errors in File"** to immediately repair the source code without annoying prompts.
 - **🔍 Dedicated Visual Diagnostic Panel:** Right-click and choose **"Explain & Fix Trace"** to open a clean side panel featuring:
   1. **What Happened (Simple Words):** A clear, ELI5 explanation of the root cause without confusing technical jargon.
   2. **Trace Path:** A visual step-by-step path (`File A -> File B -> Crash Point`) charting the execution flow leading up to the failure.
   3. **The Fix:** Actionable guidance with a direct **"Apply Fix"** button and copyable code snippet.
-- **🛡️ Autonomous Multi-Model Resilience:** Built-in automatic cascading fallback (`gemini-3.5-flash-lite`, `gemini-3.5-flash`, `gemini-3.7-flash`, `gemini-3.8-flash`) ensures that temporary rate limits or spikes on one model never disrupt your workflow.
-- **🎨 Clean & Vector-Crafted:** Strictly zero emojis, built with crisp SVG vector icons styled natively to match your active VS Code theme.
+- ** Autonomous Multi-Model Resilience:** Built-in automatic cascading fallback (`gemini-3.5-flash-lite`, `gemini-3.5-flash`, `gemini-3.7-flash`, `gemini-3.8-flash`) ensures that temporary rate limits or spikes on one model never disrupt your workflow.
+- ** Clean & Vector-Crafted:** Strictly zero emojis, built with crisp SVG vector icons styled natively to match your active VS Code theme.
 
 ---
 
@@ -25,7 +25,7 @@ Debugging cryptic error logs and long stack traces wastes valuable development t
 ### 1. Light Bulb QuickFix (Editor)
 Place your cursor on any red squiggly or syntax error and press `Ctrl + .` (or click the light bulb `💡`):
 - **`Fix with TraceFix: [error description]`** - Automatically replaces and repairs the error line in-place.
-- **`⚡ Fix All Errors in This File (TraceFix)`** - Resolves every bug, casing mistake, and runtime issue in the active document simultaneously.
+- **`Fix All Errors in This File (TraceFix)`** - Resolves every bug, casing mistake, and runtime issue in the active document simultaneously.
 - **`Explain & Fix Trace (TraceFix)`** - Opens the side-by-side diagnostic breakdown.
 
 ### 2. Terminal Right-Click Direct Fix
@@ -54,7 +54,3 @@ TraceFix connects directly to Google Gemini AI via your own API key (free tier a
 | `traceFix.model` | `string` | `"gemini-3.5-flash-lite"` | Primary model for diagnostics (with auto-fallback to available models). |
 
 ---
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
